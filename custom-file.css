@@ -1,0 +1,41 @@
+/* custom file elements*/
+.custom-file-input { border:0; cursor:pointer; position:absolute; width:100%; z-index:999; }
+.custom-file { cursor:pointer; height:30px; overflow:hidden; padding:0; position:relative; }
+.custom-file-feedback {  }
+.custom-file-feedback-populated {  }
+.custom-file-button { background:#155189; color:#fff; display:block; font-size:18px; height:30px; line-height:30px; text-align:center; text-transform:uppercase;
+background-image:linear-gradient(bottom, rgb(21,83,137) 0%, rgb(36,142,242) 100%);
+background-image:-o-linear-gradient(bottom, rgb(21,83,137) 0%, rgb(36,142,242) 100%);
+background-image:-moz-linear-gradient(bottom, rgb(21,83,137) 0%, rgb(36,142,242) 100%);
+background-image:-webkit-linear-gradient(bottom, rgb(21,83,137) 0%, rgb(36,142,242) 100%);
+background-image:-ms-linear-gradient(bottom, rgb(21,83,137) 0%, rgb(36,142,242) 100%);
+background-image:-webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(21,83,137)),
+	color-stop(1, rgb(36,142,242))
+);
+}
+.custom-file-hover .custom-file-button, .custom-file-focus .custom-file-button {
+background-image:linear-gradient(bottom, rgb(36,142,242) 0%, rgb(21,85,137) 100%);
+background-image:-o-linear-gradient(bottom, rgb(36,142,242) 0%, rgb(21,85,137) 100%);
+background-image:-moz-linear-gradient(bottom, rgb(36,142,242) 0%, rgb(21,85,137) 100%);
+background-image:-webkit-linear-gradient(bottom, rgb(36,142,242) 0%, rgb(21,85,137) 100%);
+background-image:-ms-linear-gradient(bottom, rgb(36,142,242) 0%, rgb(21,85,137) 100%);
+background-image:-webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(36,142,242)),
+	color-stop(1, rgb(21,85,137))
+);
+}
+.custom-file-focus .custom-file-button {}
+
+/* icons */
+.custom-file-ext-jpg, .custom-file-ext-gif, .custom-file-ext-png, .custom-file-ext-jpeg, .custom-file-ext-bmp { /* add image icon */ }
+.custom-file-ext-mp3, .custom-file-ext-mp4, .custom-file-ext-mov, .custom-file-ext-swf, .custom-file-ext-wav, .custom-file-ext-m4v { /* add audio icon */ }
+.custom-file-ext-zip, .custom-file-ext-tar, .custom-file-ext-sit { /* add compressed icon */ }
+
+

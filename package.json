@@ -1,0 +1,40 @@
+{
+    "name": "customFile",
+    "version": "1.0.0",
+    "title": "jQuery.customFile()",
+    "author": {
+        "name": "Caleb Brown",
+        "url": "https://bottleupandexplode.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "MIT-LICENSE.txt"
+        },
+        {
+            "type": "GPL",
+            "url": "GPL-LICENSE.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": "1"
+    },
+    "description": "The main purpose of this plugin is to create a custom radio button or checkbox",
+    "keywords": [
+        "file",
+        "upload",
+        "custom",
+        "aria"
+    ],
+    "homepage": "https://github.com/kayluhb/custom-file",
+    "contributors": [
+        {
+            "name": "Caleb Brown",
+            "url": "https://github.com/kayluhb"
+        }
+    ],
+    "files": [
+        "jquery.custom-file.js",
+        "custom-file.css"
+    ]
+}
