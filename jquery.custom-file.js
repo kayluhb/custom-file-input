@@ -12,7 +12,8 @@
         if (settings.status) {
             feedback.appendTo(upload);
         }
-        $el.addClass(klass + '-input') //add class for CSS
+         //add class for CSS
+        $el.addClass(klass + '-input')
             .mouseover(function(){ upload.addClass(klass + hover); })
             .mouseout(function(){ upload.removeClass(klass + hover); })
             .focus(function(){
@@ -71,6 +72,6 @@
         });
     };
     // default settings
-    $.fn.customFile.defaults = { status:false, text: 'Choose File' };
+    $.fn.customFile.defaults = { status:true, text: 'Choose File' };
 })(jQuery);
 
