@@ -1,3 +1,9 @@
+/* 
+
+Call the plugin with $('jquery-selector').customFile({ status:true, text: 'Choose File' });
+
+*/
+
 (function($) {
     var CustomFile = function(el, opts) {
         //Defaults are below
@@ -30,18 +36,19 @@
 	              }
             })
             .bind('change',function(){
+                // Return if there' no status to update
                 if (!settings.status) { return; }
-	              //get file name
+	              // Get file name
 	              var fileName = $(this).val().split(/\\/).pop(),
-	              //get file extension
+	              // Get file extension
 	              fileExt = klass + '-ext-' + fileName.split('.').pop().toLowerCase();
-	              //update the feedback
+	              // Update the feedback
 	              feedback
-		              .text(fileName) //set feedback text to filename
-		              .removeClass(feedback.data('fileExt') || '') //remove any existing file extension class
-		              .addClass(fileExt) //add file extension class
-		              .data('fileExt', fileExt) //store file extension for class removal on next change
-		              .addClass(klass + '-feedback-populated'); //add class to show populated state
+		              .text(fileName) // Set feedback text to filename
+		              .removeClass(feedback.data('fileExt') || '') // Remove any existing file extension class
+		              .addClass(fileExt) // Add file extension class
+		              .data('fileExt', fileExt) // Store file extension for class removal on next change
+		              .addClass(klass + '-feedback-populated'); // Add class to show populated state
             })
             .click(function(){ //for IE and Opera, make sure change fires after choosing a file, using an async callback
 	              $el.data('val', $el.val());
@@ -49,15 +56,15 @@
 		                $el.trigger('checkChange');
 	              },100);
             });
-        //on mousemove, keep file input under the cursor to steal click
+        // On mousemove, keep file input under the cursor
         upload
 	          .mousemove(function(e){
 		            $el.css({
-			            'left': e.pageX - upload.offset().left - $el.outerWidth() + 20, //position right side 20px right of cursor X)
-			            'top': e.pageY - upload.offset().top - $(window).scrollTop() - 3
+			            'left': e.pageX - upload.offset().left - $el.outerWidth() + 20, // Position right side 20px right of cursor X)
+			            'top': e.pageY - upload.offset().top - 5
 		            });	
 	          })
-	          .insertAfter($el); //insert after the input
+	          .insertAfter($el); // Insert after the input
         $el.appendTo(upload).css({ opacity:0 });
     };
     $.fn.customFile = function(options) {
