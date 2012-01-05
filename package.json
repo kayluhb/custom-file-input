@@ -19,7 +19,7 @@
     "dependencies": {
         "jquery": "1"
     },
-    "description": "The main purpose of this plugin is to create a custom radio button or checkbox",
+    "description": "The main purpose of this plugin is to create a custom file upload input",
     "keywords": [
         "file",
         "upload",
