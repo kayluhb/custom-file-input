@@ -10,11 +10,11 @@ Call the plugin with $('jquery-selector').customFile({ status:true, text: 'Choos
         var settings = $.extend({}, $.fn.customFile.defaults, opts),
         $el = $(el), klass = 'custom-file', hover = '-hover', focus = '-focus',
         //create custom control container
-        upload = $('<' + settings.root + ' class="' + klass + ' ' + $el.attr('class') + '"></' + settings.root + '>'),
+        upload = $('<' + settings.root + ' class="' + klass + ' ' + $el.attr('class') + '" />'),
         //create custom control button
         button = $('<span class="' + klass + '-button" aria-hidden="true">' + settings.text + '</span>').appendTo(upload),
         //create custom control feedback
-        feedback = $('<span class="' + klass + '-feedback" aria-hidden="true"></span>');
+        feedback = $('<span class="' + klass + '-feedback" aria-hidden="true" />');
         if (settings.status) {
             feedback.appendTo(upload);
         }
