@@ -1,5 +1,5 @@
 /* custom file elements*/
-.custom-file-input { border:0; cursor:pointer; position:absolute; width:100%; z-index:999; }
+.custom-file-input { border:0; cursor:pointer; position:absolute; width:auto; z-index:999; }
 .custom-file { cursor:pointer; display:inline-block; height:30px; margin-right:6px; overflow:hidden; padding:0; position:relative; }
 .custom-file-feedback { display:block; height:30px; line-height:30px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .custom-file-feedback-populated {  }
