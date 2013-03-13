@@ -8,16 +8,24 @@ Call the plugin with $('jquery-selector').customFile({ status:true, text: 'Choos
     var CustomFile = function(el, opts) {
         //Defaults are below
         var settings = $.extend({}, $.fn.customFile.defaults, opts),
-        $el = $(el), klass = 'custom-file', hover = '-hover', focus = '-focus',
-        //create custom control container
-        upload = $('<' + settings.root + ' class="' + klass + ' ' + $el.attr('class') + '" />'),
-        //create custom control button
-        button = $('<span class="' + klass + '-button" aria-hidden="true">' + settings.text + '</span>').appendTo(upload),
-        //create custom control feedback
-        feedback = $('<span class="' + klass + '-feedback" aria-hidden="true" />');
+            $el = $(el),
+            klass = 'custom-file',
+            hover = '-hover',
+            focus = '-focus',
+        
+            //create custom control container
+            upload = $('<' + settings.root + ' class="' + klass + ' ' + $el.attr('class') + '" />'),
+            
+            //create custom control button
+            button = $('<span class="' + klass + '-button" aria-hidden="true">' + settings.text + '</span>').appendTo(upload),
+            
+            //create custom control feedback
+            feedback = $('<span class="' + klass + '-feedback" aria-hidden="true" />');
+
         if (settings.status) {
             feedback.appendTo(upload);
         }
+
          //add class for CSS
         $el.addClass(klass + '-input')
             .mouseover(function(){ upload.addClass(klass + hover); })
@@ -30,18 +38,20 @@ Call the plugin with $('jquery-selector').customFile({ status:true, text: 'Choos
                   upload.removeClass(klass + focus);
                   $(this).trigger('checkChange');
              })
-            .bind('checkChange', function(){
+            .on('checkChange', function(){
                   if ($el.val() && $el.val() != $el.data('val')){
                         $el.trigger('change');
                   }
             })
-            .bind('change',function(){
+            .on('change',function(){
                 // Return if there' no status to update
                 if (!settings.status) { return; }
+
                   // Get file name
                   var fileName = $(this).val().split(/\\/).pop(),
-                  // Get file extension
-                  fileExt = klass + '-ext-' + fileName.split('.').pop().toLowerCase();
+                      // Get file extension
+                      fileExt = klass + '-ext-' + fileName.split('.').pop().toLowerCase();
+
                   // Update the feedback
                   feedback
                       .text(fileName) // Set feedback text to filename
@@ -56,6 +66,7 @@ Call the plugin with $('jquery-selector').customFile({ status:true, text: 'Choos
                         $el.trigger('checkChange');
                   },100);
             });
+
         // On mousemove, keep file input under the cursor
         upload
               .mousemove(function(e){
